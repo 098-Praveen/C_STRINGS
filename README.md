@@ -171,3 +171,103 @@ scanf("%s",str);
     return 0;
 }
 scanf reads until space and fgets reads beyond spaces
+
+IMPORTANT TOPIC 
+char str[]="hello"
+"here str gives base address and str+1 gives second element using base address incrementation
+&str access the entire array starts at base address &str+1 means if the array size is 5 now it starts from the 5 to 9 end,
+like 6 to 10".
+
+QUESTION:
+char str[] = "WORLD";
+
+printf("%s\n", str + 2);
+ANS: RLD
+
+char str[] = "WORLD";
+
+printf("%p\n", (void *)str);
+printf("%p\n", (void *)&str);
+1000 AND 1000
+
+char str[] = "WORLD";
+
+printf("%zu\n", sizeof(str)); // 6 bytes 
+printf("%zu\n", sizeof(&str));// 8 bytes
+
+WHEN SIZEOF IS APPLIED DIRECTLY TO AN ARRAY, THE ARRAY DOES NOT CONVERT TO A POINTER.
+| Expression        | What does it measure?                     | Result on our example |
+| ----------------- | ----------------------------------------- | --------------------: |
+| `str`             | Converts to a pointer in most expressions |      Address of `'W'` |
+| `sizeof(str)`     | Entire array                              |               6 bytes |
+| `str + 1`         | Pointer to the second character           |      Address of `'O'` |
+| `sizeof(str + 1)` | Size of the pointer                       |     Typically 8 bytes |
+| `&str`            | Address of the entire array               | Same starting address |
+| `sizeof(&str)`    | Size of a pointer to the array            |     Typically 8 bytes |
+
+
+an array name can convert to a pointer,but the array itself is not a pointer.
+why sizeof(str) gives 6 bytes because world is of 5 bytes and null character so 6 bytes.
+NOTE:
+but here str is of base address right 
+in MOST EXPRESSIONS STR CONVERTS TO THE BASE ADDRESS 
+BUT SIZEOF(STR) IS SPECIAL CASE THE ARRAY NAME DOES NOT GET CONVERTED INTO POINTER 
+INSTEAD SIZE OF MEASURES THE ENTIRE ARRAY.
+
+char str[] = "CAT";
+
+printf("%zu\n", sizeof(str));
+printf("%zu\n", sizeof(str + 1));
+
+ANS: 4 8
+
+char str[] = "HELLO";
+char *p = str;
+
+printf("%zu\n", sizeof(str));
+printf("%zu\n", sizeof(p));
+ANS: 6 8
+
+char str[] = "COMPUTER";
+
+printf("%s\n", str + 3);
+printf("%c\n", str[3]);
+ANS: PUTER P
+
+char str[] = "DOG";
+int i = 0;
+
+while (str[i] != '\0')
+{
+    i++;
+}
+
+printf("%d", i);
+ANS: 3
+
+
+char str[] = "HI ALL";
+int i = 0;
+
+while (str[i] != '\0')
+{
+    i++;
+}
+
+printf("%d", i);
+
+ANS : 2 IS SPACE SO THE ANS IS 6 BYTES:
+#include<stdio.h>
+int main()
+{
+    char str[]="hello";
+    int i,count=0;
+
+    for(i=0;str[i]!='\0';i++)
+    {
+        printf("%c ",str[i]);
+        count++;
+    }
+    printf("%d ",count);
+}
+
