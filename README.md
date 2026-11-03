@@ -271,3 +271,20 @@ int main()
     printf("%d ",count);
 }
 
+STRING LENGTH:
+
+#include<stdio.h>
+int main()
+{
+    char str[]="hello world";
+    int length=0;
+    int i=0;
+    while(str[i]!='\0')
+    {
+        length++;
+        i++;
+    }
+    
+ printf("%d ",length);
+}
+
