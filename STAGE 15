@@ -1,0 +1,39 @@
+GENERAL CHARACTER FREQUENCY:
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="PROGRAMMING";
+    int n,i,j;
+    n=strlen(str);
+    for(i=0;i<n;i++)
+    {
+        int count=1;
+        for(j=i+1;j<n;j++)
+        {
+            if(str[i]==str[j])
+            {
+                count++;  
+            }
+        }
+        int seen=0;
+        for(j=0;j<i;j++)
+        {
+            
+            if(str[i]==str[j])
+            {
+                seen=1;
+            }
+        }
+        
+           
+            if(seen==0)
+            {
+                 printf("%c=",str[i]);
+                printf("%d\n",count);
+            }
+        
+    }
+    
+    return 0;
+}
