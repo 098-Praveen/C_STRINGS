@@ -50,3 +50,180 @@ int main()
     
     return 0;
 }
+
+
+CHARACTER FREQUENCY ONLY ONCE:
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="SWISS";
+    int i,n,j;
+    n=strlen(str);
+    
+    for(i=0;str[i]!='\0';i++)
+    {
+        int count=1;
+        for(j=i+1;j<n;j++)
+        {
+            if(str[i]==str[j])
+            {
+                count++;   
+            }
+        }
+        int seen=0;
+        for(j=0;j<i;j++)
+        {
+            if(str[i]==str[j])
+            {
+                seen=1;
+            }
+        }
+        if(seen==0&&count==1)
+        {
+            printf("%c\n",str[i]);
+            break;
+            
+        }
+        
+    }
+    return 0;
+}
+
+SEARCHING CHARACTERS AND SUBSTRINGS:
+
+first programme:
+print occurance indexes:
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="PROGRAMMING";
+    char ch='M';
+    int i,j,n;
+    n=sizeof(str)/sizeof(str[0]);
+    for(i=0;i<n;i++)
+    {
+        if(ch==str[i])
+        {
+            printf("pos=%d\n",i);
+        }
+        
+    }
+    return 0;
+}
+
+Write a program to:
+1. Search for 'R'.
+2. Count how many times it occurs.
+3. Print its total count.
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="PROGRAMMING";
+    char ch='R';
+    int i,count=0;
+    n=strlen(str);
+    for(i=0;str[i]!='\0';i++)
+    {
+        
+        if(ch==str[i])
+        {
+            count++;
+        }
+        
+    }
+    
+    printf("%d",count);
+    return 0;
+}
+
+CHARACTER FOUND:
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="PROGRAMMING";
+    char ch='Z';
+    int i,found=0;;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(ch==str[i])
+        {
+            found=1;
+            break;
+        }
+        
+    }
+    if(found==1)
+    {
+        printf("character found");
+    }
+    else
+    {
+        printf("character not found");
+    }
+    return 0;
+}
+PROGRAMME:
+find char with idx:
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="PROGRAMMING";
+    char ch='M';
+    int i,idx=0,flag=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(ch==str[i])
+        {
+            idx=i;
+            flag=1;
+            break;
+        }
+        
+    }
+    if(flag==1)
+    {
+        printf("character found at idx=%d\n",idx);
+    }
+    else
+    {
+        printf("character not found");
+  }
+    
+}
+
+LAST OCCURANCE OF A DIGIT:
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="PROGRAMMING";
+    char ch='M';
+    int i,idx=0,flag=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(ch==str[i])
+        {
+            idx=i;
+            flag=1;
+        }
+        
+    }
+    if(flag==1)
+    {
+        printf("at idx=%d\n",idx);
+    }
+    else
+    {
+        printf("not found");
+    }
+    return 0;   
+}
+
