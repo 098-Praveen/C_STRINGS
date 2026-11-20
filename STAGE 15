@@ -37,3 +37,23 @@ int main()
     
     return 0;
 }
+
+every occurance and total occurance
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="MISSISSIPPI";
+    char ch='S';
+    int i,count=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(ch==str[i])
+        {
+            printf("occured at idx=%d\n",i);
+            count++;
+        }
+    }
+    printf("total occurance:%d",count);
+    return 0;
+}
